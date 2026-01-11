@@ -502,9 +502,13 @@ const generateContinuousHtml = (doc: ParsedDoc): string => {
     // Indentation based on header level - Increased for distinct visual hierarchy matching app
     // Level 1: 0.5rem, Level 2: 2.0rem, Level 3: 3.5rem
     const paddingLeft = item.level === 1 ? '0.5rem' : item.level === 2 ? '2rem' : '3.5rem';
+    
+    // Bold styling for H1 (level 1)
+    const extraStyle = item.level === 1 ? 'font-weight: 700; color: #cbd5e1;' : '';
+
     return `
     <li>
-      <a href="#${item.id}" class="nav-item" style="padding-left: ${paddingLeft};">
+      <a href="#${item.id}" class="nav-item" style="padding-left: ${paddingLeft}; ${extraStyle}">
         ${escapeHtml(item.title)}
       </a>
     </li>
