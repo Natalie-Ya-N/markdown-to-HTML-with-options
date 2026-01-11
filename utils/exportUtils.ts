@@ -113,6 +113,11 @@ const COMMON_CSS = `
   .prose strong { color: #5ABDAC !important; }
   .prose code { color: #5ABDAC !important; }
   
+  /* Slightly tighter line height for body text (1.625) */
+  .prose p, .prose ul, .prose ol, .prose li {
+    line-height: 1.625 !important;
+  }
+  
   /* Blockquote Styling: Remove automatic quotes and italics from Tailwind Typography */
   .prose blockquote { 
     border-left-width: 2px !important; 

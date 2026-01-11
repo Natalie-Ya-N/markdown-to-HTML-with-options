@@ -133,12 +133,15 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
             return <h3 id={id} className="text-lg md:text-xl font-semibold text-[#4A9E92] mt-8 mb-3" {...props}>{children}</h3>
           },
           h4: ({node, ...props}) => <h4 className="text-base md:text-lg font-semibold text-slate-300 mt-6 mb-2" {...props} />,
-          p: ({node, ...props}) => <p className="text-base leading-7 text-slate-300 mb-5" {...props} />,
+          
+          // Updated: Changed leading-7 to leading-relaxed for slightly tighter text
+          p: ({node, ...props}) => <p className="text-base leading-relaxed text-slate-300 mb-5" {...props} />,
           strong: ({node, ...props}) => <strong className="font-bold text-[#5ABDAC]" {...props} />,
           b: ({node, ...props}) => <b className="font-bold text-[#5ABDAC]" {...props} />,
           ul: ({node, ...props}) => <ul className="list-disc list-outside mb-5 text-slate-300 space-y-1.5 text-base marker:text-slate-500" {...props} />,
           ol: ({node, ...props}) => <ol className="list-decimal list-outside mb-5 text-slate-300 space-y-1.5 text-base marker:text-slate-500" {...props} />,
-          li: ({node, ...props}) => <li className="pl-2 leading-7" {...props} />,
+          // Updated: Changed leading-7 to leading-relaxed
+          li: ({node, ...props}) => <li className="pl-2 leading-relaxed" {...props} />,
           
           // Enhanced Blockquote / Callout Handler
           blockquote: ({node, className, children, ...props}) => {
