@@ -519,6 +519,9 @@ const generateContinuousHtml = (doc: ParsedDoc): string => {
 };
 
 const buildHtmlSkeleton = (fileName: string, sidebarContent: string, mainContent: string, extraScript: string) => {
+  const now = new Date();
+  const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -536,6 +539,7 @@ const buildHtmlSkeleton = (fileName: string, sidebarContent: string, mainContent
         <aside class="sidebar">
             <div class="p-3 border-b border-slate-800 bg-slate-900">
                 <h1 class="font-bold text-lg text-slate-100">${escapeHtml(fileName)}</h1>
+                <p class="text-xs text-slate-100 mt-1">${dateStr}</p>
             </div>
             <!-- Reduced padding on nav container to match app -->
             <nav class="flex-1 overflow-y-auto custom-scrollbar px-1.5 py-2">
