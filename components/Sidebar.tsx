@@ -57,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 w-full text-left px-2 py-1.5 rounded-lg text-base transition-all duration-200 group flex items-center justify-between font-medium
                 ${isActive 
                   ? 'bg-[#5ABDAC]/10 text-[#5ABDAC] ring-1 ring-[#5ABDAC]/30' 
-                  : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+                  : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'
                 }
               `}
             >

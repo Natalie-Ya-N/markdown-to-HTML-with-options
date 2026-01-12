@@ -458,7 +458,7 @@ const generateSectionedHtml = (doc: ParsedDoc): string => {
 
   const sidebarItemsHtml = doc.sections.map((section, index) => `
     <li>
-      <button onclick="switchSection('${section.id}')" id="btn-${section.id}" class="w-full text-left px-2 py-1.5 rounded-lg text-sm transition-all duration-200 group flex items-center justify-between font-medium ${index === 0 ? 'bg-[#5ABDAC]/10 text-[#5ABDAC] ring-1 ring-[#5ABDAC]/30' : 'text-slate-300 hover:bg-slate-800 hover:text-white'}">
+      <button onclick="switchSection('${section.id}')" id="btn-${section.id}" class="w-full text-left px-2 py-1.5 rounded-lg text-sm transition-all duration-200 group flex items-center justify-between font-medium ${index === 0 ? 'bg-[#5ABDAC]/10 text-[#5ABDAC] ring-1 ring-[#5ABDAC]/30' : 'text-slate-400 hover:bg-slate-800 hover:text-slate-100'}">
         <span class="truncate">${escapeHtml(section.title)}</span>
       </button>
     </li>
@@ -474,7 +474,7 @@ const generateSectionedHtml = (doc: ParsedDoc): string => {
             
             // Reset buttons
             document.querySelectorAll('button[id^="btn-"]').forEach(btn => {
-                btn.className = "w-full text-left px-2 py-1.5 rounded-lg text-sm transition-all duration-200 group flex items-center justify-between font-medium text-slate-300 hover:bg-slate-800 hover:text-white";
+                btn.className = "w-full text-left px-2 py-1.5 rounded-lg text-sm transition-all duration-200 group flex items-center justify-between font-medium text-slate-400 hover:bg-slate-800 hover:text-slate-100";
             });
             const activeBtn = document.getElementById('btn-' + id);
             if (activeBtn) activeBtn.className = "w-full text-left px-2 py-1.5 rounded-lg text-sm transition-all duration-200 group flex items-center justify-between font-medium bg-[#5ABDAC]/10 text-[#5ABDAC] ring-1 ring-[#5ABDAC]/30";
