@@ -162,8 +162,20 @@ const App: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
+    
+    // Format date as YYMMDD-HHMM
+    const now = new Date();
+    const year = now.getFullYear().toString().slice(-2);
+    const month = (now.getMonth() + 1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    const hour = now.getHours().toString().padStart(2, '0');
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const dateTime = `${year}${month}${day}-${hour}${minute}`;
+
     // doc.fileName is already stripped of extension
-    a.download = `${doc.fileName}-${viewMode}.html`;
+    // Naming convention: filename-dateTime-mode.html
+    a.download = `${doc.fileName}-${dateTime}-${viewMode}.html`;
+    
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
