@@ -163,13 +163,13 @@ const App: React.FC = () => {
     const a = document.createElement('a');
     a.href = url;
     
-    // Format date as YYMMDD-HHMM
+    // Format date as YYMMDD-HHMM (UTC)
     const now = new Date();
-    const year = now.getFullYear().toString().slice(-2);
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const day = now.getDate().toString().padStart(2, '0');
-    const hour = now.getHours().toString().padStart(2, '0');
-    const minute = now.getMinutes().toString().padStart(2, '0');
+    const year = now.getUTCFullYear().toString().slice(-2);
+    const month = (now.getUTCMonth() + 1).toString().padStart(2, '0');
+    const day = now.getUTCDate().toString().padStart(2, '0');
+    const hour = now.getUTCHours().toString().padStart(2, '0');
+    const minute = now.getUTCMinutes().toString().padStart(2, '0');
     const dateTime = `${year}${month}${day}-${hour}${minute}`;
 
     // doc.fileName is already stripped of extension
