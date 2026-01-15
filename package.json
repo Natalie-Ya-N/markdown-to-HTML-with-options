@@ -1,5 +1,5 @@
 {
-  "name": "markdown-to-html",
+  "name": "markdown-to-html-with-options",
   "private": true,
   "version": "0.0.0",
   "type": "module",

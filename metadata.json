@@ -1,5 +1,5 @@
 {
-  "name": "Markdown to HTML",
+  "name": "Markdown to HTML with Options",
   "description": "A modern, split-view Markdown documentation viewer that parses files into navigable sections based on H1 headers.",
   "requestFramePermissions": []
 }
